@@ -1,0 +1,34 @@
+.event-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .event-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .event-card p {
+    font-size: 1rem;
+  }
+  
+  .event-card .btn {
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  /* Add responsiveness */
+  @media (max-width: 768px) {
+    .event-card {
+      margin: 10px auto;
+      width: 90%;
+    }
+  }
