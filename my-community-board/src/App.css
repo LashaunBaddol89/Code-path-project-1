@@ -1,42 +1,230 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fdfcfc;  /* Light background */
+}
+
+.community-board {
   text-align: center;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  margin-bottom: 40px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.header h1 {
+  font-size: 2.5rem;
+  color: #007BFF;  /* Bright, community-friendly color */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #007BFF;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Event Board Layout */
+.event-board {
+  display: flex;
+  justify-content: center; /* Centers the columns horizontally */
+  gap: 50px; /* Space between the two columns */
+  flex-wrap: wrap;
+  max-width: 1200px;  /* Limit the width for larger screens */
+  margin: 0 auto;  /* Ensure the event board is centered */
+}
+
+.event-group {
+  display: grid;
+  grid-template-columns: 1fr;  /* One column per group */
+  gap: 20px;
+  width: 45%;  /* Takes up half the available space */
+}
+
+/* Event Card Styles */
+.event-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.event-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 16px 0;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0 16px 16px;
+}
+
+.event-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.event-link:hover {
+  background-color: #218838;
+}
+
+/* Additional Designs for a Community Feel */
+.community-board {
+  background-color: #f0f4f7; /* Soft background color */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-card:hover:before {
+  content: '🌟';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 1.5rem;
+}
+
+.event-card:hover {
+  border: 2px solid #007BFF;
+}
+
+@media (max-width: 768px) {
+  .event-board {
+    flex-direction: column;  /* Stacks the event groups vertically on small screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .event-group {
+    width: 100%;  /* Make each event group take full width */
+  }
+
+  .header h1 {
+    font-size: 2rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Right Section (Community Announcements) */
+.right-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Occupies 30% of the screen width */
+  text-align: left;
+}
+
+.right-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+.right-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.right-section ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.right-section ul li:before {
+  content: "•";
+  color: #007BFF;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 768px) {
+  .board-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .event-board {
+    width: 100%;
+  }
+
+  .right-section {
+    width: 100%;
+    margin-top: 30px;
   }
 }
-
-.card {
-  padding: 2em;
+/* Event Board Layout */
+.board-container {
+  display: flex;
+  justify-content: space-between; /* Ensure space is distributed */
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.read-the-docs {
-  color: #888;
+/* Right Section (Community Announcements) */
+.right-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Ensure this width fits alongside the event board */
+  text-align: left;
+}
+
+.right-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #007BFF;
+}
+
+.right-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.right-section ul li {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.community-announcements {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 20px;
+  width: 45%;
+  color: #333;  /* Default text color for the announcement section */
+}
+
+.community-announcements h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;  /* Darker header text */
+}
+
+.community-announcements p {
+  font-size: 1rem;
+  color: #555;  /* Slightly lighter text for body */
 }
